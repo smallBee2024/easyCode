@@ -55,7 +55,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
-import { PieChartOutlined } from '@ant-design/icons-vue';
+import { PieChartOutlined, UserOutlined } from '@ant-design/icons-vue';
 
 const selectedKeys = ref<string[]>(['index']);
 
