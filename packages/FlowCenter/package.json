@@ -1,0 +1,26 @@
+{
+  "name": "flowcenter",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@vueuse/core": "^12.0.0",
+    "ant-design-vue": "^4.2.5",
+    "await-to-js": "^3.0.0",
+    "codemirror": "5",
+    "dayjs": "^1.11.13",
+    "lodash-es": "^4.17.21",
+    "vue-collapsed": "^1.3.4",
+    "vue-draggable-next": "^2.2.1"
+  }
+}

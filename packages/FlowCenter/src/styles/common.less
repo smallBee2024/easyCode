@@ -1,0 +1,345 @@
+html,
+body {
+  font-size: 14px;
+}
+// 一些样式重置
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+h4 {
+  font-weight: 400;
+}
+ul,
+li {
+  margin: 0;
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+// 部分原子样式
+.overflow-hidden-one {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow-hidden-two {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -moz-box !important;
+  -moz-line-clamp: 2;
+  -moz-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.logic-container foreignObject {
+  overflow: visible !important;
+}
+.logic-container .ant-tabs {
+  height: 100%;
+  .ant-tabs-content-holder {
+    height: 100%;
+    overflow-y: overlay;
+  }
+}
+// antd样式复写
+.placeholder-form-item {
+  &.ant-form-item .ant-form-item-control-input {
+    // min-height: auto;
+    // height: 0;
+    display: none;
+  }
+}
+.text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.overflow-hidden-two {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 2;
+  -moz-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+// 部分模拟antd控件样式(v4直接设置无效)
+.ant-input-simulate {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  background-color: #ffffff;
+  background-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.2s;
+  :hover {
+    border-color: #4096ff;
+    border-inline-end-width: 1px;
+    .clear-icon {
+      display: block;
+    }
+  }
+  .clear-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%);
+    display: none;
+  }
+  .form-item-empty-text {
+    color: #999;
+  }
+}
+// 水平的tab
+.ant-tabs.ant-tabs-left {
+  &.horizontal-tabs {
+    border: 1px solid var(--ant-colorBorder);
+    border-radius: 2px;
+    & > .ant-tabs-nav .ant-tabs-tab {
+      padding: 3px 16px;
+      border-bottom: 1px solid var(--ant-colorBorder);
+      &.ant-tabs-tab-active {
+        border-right: 1px solid var(--ant-colorBorderBg);
+      }
+    }
+    & > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+      margin-top: 0;
+    }
+    .ant-tabs-ink-bar {
+      left: 0;
+    }
+    & > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+      padding: 16px;
+      overflow-y: auto;
+    }
+  }
+}
+
+.ant-form-item {
+  &.label-bold {
+    label {
+      font-weight: bold;
+    }
+  }
+}
+// 去除某些校验样式(是否有更好的办法？？)
+.no-valid-style {
+  &.ant-input-status-error,
+  &.ant-input-affix-wrapper-status-error {
+    border-color: #d9d9d9 !important;
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1) !important;
+    }
+  }
+  .ant-input-affix-wrapper-status-error,
+  .ant-input-status-error {
+    border-color: #d9d9d9 !important;
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1) !important;
+    }
+  }
+}
+.required-symbol {
+  .ant-form-item-label {
+    padding-left: 10px;
+  }
+  position: relative;
+  &:before {
+    content: '*';
+    color: #ff4d4f;
+    font-size: 14px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+// 空文字
+.empty-text {
+  color: var(--ant-colorTextDescription);
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+// 通用渐变背景块
+.fade-item-bg-wrapper {
+  width: 28px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  transition: all 0.1s;
+  // box-shadow: 0 1px 5px 0 var(--ant-colorBgLayout);
+  background-color: var(--ant-colorBgBase);
+  &.no-bg {
+    background-color: transparent;
+  }
+  &.no-width {
+    width: auto;
+    padding: 0 10px;
+  }
+  // 用于深色背景操作项显示
+  &.fake-btn {
+    color: var(--ant-controlItemBgHover) !important;
+    &:hover,
+    &.is-active {
+      background-color: var(--ant-blue) !important;
+      color: #fff !important;
+    }
+  }
+  &.gray-btn {
+    background-color: rgba(23, 26, 29, .03) !important;
+    &:hover,
+    &.is-active {
+      background-color: rgba(126, 134, 142, .16) !important;
+    }
+  }
+  &.ant-btn {
+    padding: 8px;
+    line-height: 20px;
+    outline: none;
+    border: none;
+  }
+  &:hover,
+  &.is-active {
+    background-color: var(--ant-controlItemBgHover) !important;
+  }
+  &.inline {
+    display: inline-flex;
+  }
+  .anticon {
+    font-size: 16px;
+  }
+  &.select {
+    height: auto;
+  }
+  &.middle {
+    width: 20px;
+    height: 20px;
+  }
+  &.small {
+    width: 12px;
+    height: 12px;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    color: var(--ant-controlItemBgActiveDisabled);
+  }
+}
+.field-set-item-header {
+  background-color: #f2f3f5;
+  height: 40px;
+  padding: 0 5px;
+}
+.field-set-item-wrapper {
+  padding: 5px;
+}
+
+// fade过度
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s; /* 定义过渡时间为0.5秒 */
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0; /* 淡入之前和淡出之后的状态，透明度为0 */
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1; /* 淡入完成和淡出开始的状态，透明度为1 */
+}
+
+// 一些配置面板的样式
+
+.rule-list-container {
+  .rule-group-wrapper {
+    position: relative;
+    .rule-relation-wrapper {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 72px;
+      .rule-line {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 15px;
+        border-radius: 5px 0 0 5px;
+        border: 1px solid rgba(31, 56, 88, 0.4);
+        border-right: none;
+        height: calc(100% - 52px);
+        &::before {
+          position: absolute;
+          right: -6px;
+          top: -3px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          content: ' ';
+          border: 1px solid rgba(31, 56, 88, 0.4);
+        }
+        &::after {
+          position: absolute;
+          right: -6px;
+          bottom: -3px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          content: ' ';
+          border: 1px solid rgba(31, 56, 88, 0.4);
+        }
+      }
+      .rule-trigger {
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+      }
+    }
+    .rule-list-wrapper {
+      &.has-child {
+        padding-left: 80px;
+      }
+    }
+  }
+}
+
+.rule-valid-result {
+  padding: 10px;
+  padding-top: 0;
+  color: rgb(255, 77, 79);
+}

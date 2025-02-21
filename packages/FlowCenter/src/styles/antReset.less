@@ -1,0 +1,41 @@
+.ant-divider.small {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.flow-node-setter {
+  .flow-node-setter-body {
+    padding: 0 20px;
+  }
+  .block-item {
+    margin-bottom: 10px;
+  }
+  .ant-form-item-label {
+    font-weight: 600;
+  }
+  .normal-label .ant-form-item-label {
+    font-weight: normal;
+  }
+  // 兼容label显示
+  .block-item {
+    .ant-form-item-label {
+      width: 100%;
+    }
+    .ant-form-item-label label {
+      display: block;
+    }
+    &.flex-label {
+      .ant-form-item-label label {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+  // 纵向label tip
+
+  &.vertical-label {
+    .ant-form-item-label > label {
+      display: block;
+    }
+  }
+}
